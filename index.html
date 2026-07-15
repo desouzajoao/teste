@@ -12,11 +12,12 @@
         }
 
         *{
+            margin:0;
+            padding:0;
             box-sizing:border-box;
         }
 
         body{
-            margin:0;
             font-family:Arial, Helvetica, sans-serif;
             background:#f4f4f4;
             color:#333;
@@ -28,93 +29,110 @@
             padding:30px;
             background:#fff;
             border-radius:12px;
-            box-shadow:0 6px 18px rgba(0,0,0,.1);
-            text-align:center;
+            box-shadow:0 6px 18px rgba(0,0,0,.10);
         }
 
         h1{
             font-family:'Coolvetica',sans-serif;
             font-size:44px;
             letter-spacing:2px;
+            text-align:center;
             margin-bottom:10px;
         }
 
         .autor{
-            font-size:14px;
+            text-align:center;
             color:#777;
-            margin-bottom:25px;
-            line-height:1.8;
+            font-size:14px;
+            margin-bottom:30px;
         }
 
-        .premio{
-            display:block;
-            margin-top:10px;
-            font-size:14px;
-            font-weight:bold;
+        /* BLOCO DA PREMIAÇÃO */
+
+        .premiacao{
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:20px;
+
+            margin:25px auto 35px;
+            padding:18px 22px;
+
+            border:1px solid #ececec;
+            border-radius:10px;
+            background:#fafafa;
+        }
+
+        .premiacao-texto{
+            flex:1;
+        }
+
+        .premiacao-texto h2{
+            font-size:15px;
+            font-weight:700;
             text-transform:uppercase;
-            letter-spacing:1.5px;
+            letter-spacing:1.4px;
 
             background:linear-gradient(
                 90deg,
-                #8a6a18 0%,
-                #d8b24a 20%,
-                #fff4b0 40%,
-                #d8b24a 60%,
-                #8a6a18 100%
+                #8b6b16,
+                #d4af37,
+                #fff5b7,
+                #d4af37,
+                #8b6b16
             );
 
-            background-size:200% auto;
+            background-size:200%;
             -webkit-background-clip:text;
             -webkit-text-fill-color:transparent;
-            background-clip:text;
-            color:transparent;
 
             animation:shine 3s linear infinite;
         }
 
-        @keyframes shine{
-            to{
-                background-position:200% center;
-            }
-        }
-
-        .foto-container{
-            position:relative;
-            display:inline-block;
-            margin-bottom:25px;
-        }
-
-        .foto-container img:first-child{
-            display:block;
-            max-width:100%;
-            height:auto;
-            border-radius:10px;
+        .premiacao-texto p{
+            margin-top:6px;
+            color:#666;
+            font-size:13px;
+            letter-spacing:.3px;
         }
 
         .logo-intercom{
-            position:absolute;
-            right:18px;
-            bottom:18px;
-            width:110px;
-
-            opacity:.9;
+            width:95px;
+            height:auto;
 
             filter:
-                drop-shadow(0 0 8px rgba(255,215,0,.7))
-                drop-shadow(0 0 18px rgba(255,215,0,.45));
+                drop-shadow(0 0 10px rgba(212,175,55,.35));
 
-            transition:.35s ease;
+            transition:.3s;
         }
 
         .logo-intercom:hover{
-            transform:scale(1.08);
-            opacity:1;
+            transform:scale(1.05);
+        }
+
+        @keyframes shine{
+
+            from{
+                background-position:-200%;
+            }
+
+            to{
+                background-position:200%;
+            }
+
+        }
+
+        img.foto{
+            width:100%;
+            border-radius:10px;
+            margin-bottom:30px;
+            display:block;
         }
 
         .descricao{
+            text-align:justify;
             font-size:16px;
             line-height:1.7;
-            text-align:justify;
         }
 
         .descricao p{
@@ -122,46 +140,43 @@
         }
 
         .frase-final{
+            margin-top:40px;
+            text-align:center;
             font-style:italic;
             font-size:22px;
-            margin-top:40px;
             color:#444;
-            text-align:center;
         }
 
         footer{
-            margin-top:30px;
-            font-size:12px;
+            margin-top:35px;
+            text-align:center;
             color:#aaa;
+            font-size:12px;
         }
 
-        @media(max-width:768px){
+        @media(max-width:700px){
 
-            .container{
-                margin:20px;
-                padding:20px;
-            }
-
-            h1{
-                font-size:34px;
+            .premiacao{
+                flex-direction:column;
+                text-align:center;
             }
 
             .logo-intercom{
                 width:75px;
-                right:12px;
-                bottom:12px;
             }
 
-            .premio{
-                font-size:12px;
+            h1{
+                font-size:36px;
             }
 
             .frase-final{
                 font-size:19px;
             }
+
         }
 
     </style>
+
 </head>
 
 <body>
@@ -172,42 +187,45 @@
 
     <div class="autor">
         por João Victor de Souza
-        <span class="premio">
-            🏆 1º Lugar — Intercom Sul 2026 • PT05 – Fotografia Artística
-        </span>
     </div>
 
-    <div class="foto-container">
+    <div class="premiacao">
 
-        <img src="foto.jpg" alt="Fronteiras de Papel">
+        <div class="premiacao-texto">
+            <h2>🏆 1º Lugar — Intercom Sul 2026</h2>
+            <p>Produção Transdisciplinar • PT05 – Fotografia Artística</p>
+        </div>
 
-        <img
-            src="logo.png"
-            alt="Intercom Sul 2026"
-            class="logo-intercom">
+        <img src="logo.png"
+             alt="Intercom Sul 2026"
+             class="logo-intercom">
 
     </div>
+
+    <img src="foto.jpg"
+         alt="Fronteiras de Papel"
+         class="foto">
 
     <div class="descricao">
 
         <p>
             Um pedaço de algodão tensionado é a única estrutura que separa o voo da queda livre.
-            O chão avermelhado demarca onde o direito à cidade esbarra no tijolo cru;
-            no ar, ícones de papel tentam driblar o peso de quem nasce nas bordas do mapa.
+            O chão avermelhado demarca onde o direito à cidade esbarra no tijolo cru; no ar,
+            ícones de papel tentam driblar o peso de quem nasce nas bordas do mapa.
         </p>
 
         <p>
             Mesmo longe da Venezuela, o garoto reconhece o icônico personagem Chaves,
-            popular em toda a América Latina, e encontra em Londrina um fragmento de
-            pertencimento. Sem perceber, há ironia no desenho infantil: criado a partir
-            de uma infância marcada pela escassez, ele ecoa, no ar, a própria causa que
-            o fez deixar seu lar.
+            popular em toda a América Latina, e encontra em Londrina um fragmento de pertencimento.
+            Sem perceber, há ironia no desenho infantil: criado a partir de uma infância marcada
+            pela escassez, ele ecoa, no ar, a própria causa que o fez deixar seu lar.
         </p>
 
         <p>
             A linha repuxa. Entre o lugar de origem e o território que o acolhe,
-            o gesto de brincar redesenha limites invisíveis. Onde o homem impõe
-            o limite do passo, de quem é o vento que ousa cruzar a fronteira?
+            o gesto de brincar redesenha limites invisíveis.
+            Onde o homem impõe o limite do passo,
+            de quem é o vento que ousa cruzar a fronteira?
         </p>
 
     </div>
