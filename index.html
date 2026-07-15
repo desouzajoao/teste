@@ -1,156 +1,226 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Fronteiras de Papel</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Fronteiras de Papel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    @font-face {
-      font-family: 'Coolvetica';
-      src: url('coolvetica.otf') format('opentype');
-    }
+    <style>
+        @font-face {
+            font-family: 'Coolvetica';
+            src: url('coolvetica.otf') format('opentype');
+        }
 
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
-    }
+        *{
+            box-sizing:border-box;
+        }
 
-    .container {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 30px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-      text-align: center;
-    }
+        body{
+            margin:0;
+            font-family:Arial, Helvetica, sans-serif;
+            background:#f4f4f4;
+            color:#333;
+        }
 
-    h1 {
-      font-family: 'Coolvetica', sans-serif;
-      font-size: 44px;
-      letter-spacing: 2px;
-      margin-bottom: 10px;
-    }
+        .container{
+            max-width:900px;
+            margin:40px auto;
+            padding:30px;
+            background:#fff;
+            border-radius:12px;
+            box-shadow:0 6px 18px rgba(0,0,0,.1);
+            text-align:center;
+        }
 
-    .autor {
-      font-size: 14px;
-      color: #777;
-      margin-bottom: 25px;
-      line-height: 1.7;
-    }
+        h1{
+            font-family:'Coolvetica',sans-serif;
+            font-size:44px;
+            letter-spacing:2px;
+            margin-bottom:10px;
+        }
 
-    .premio {
-      display: block;
-      margin-top: 10px;
-      font-size: 14px;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
+        .autor{
+            font-size:14px;
+            color:#777;
+            margin-bottom:25px;
+            line-height:1.8;
+        }
 
-      background: linear-gradient(
-        90deg,
-        #8a6a18 0%,
-        #d8b24a 20%,
-        #fff4b0 40%,
-        #d8b24a 60%,
-        #8a6a18 100%
-      );
+        .premio{
+            display:block;
+            margin-top:10px;
+            font-size:14px;
+            font-weight:bold;
+            text-transform:uppercase;
+            letter-spacing:1.5px;
 
-      background-size: 200% auto;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      color: transparent;
+            background:linear-gradient(
+                90deg,
+                #8a6a18 0%,
+                #d8b24a 20%,
+                #fff4b0 40%,
+                #d8b24a 60%,
+                #8a6a18 100%
+            );
 
-      animation: shine 3s linear infinite;
-    }
+            background-size:200% auto;
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+            background-clip:text;
+            color:transparent;
 
-    @keyframes shine {
-      to {
-        background-position: 200% center;
-      }
-    }
+            animation:shine 3s linear infinite;
+        }
 
-    img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-      margin-bottom: 25px;
-    }
+        @keyframes shine{
+            to{
+                background-position:200% center;
+            }
+        }
 
-    .descricao {
-      font-size: 16px;
-      line-height: 1.7;
-      text-align: justify;
-    }
+        .foto-container{
+            position:relative;
+            display:inline-block;
+            margin-bottom:25px;
+        }
 
-    .descricao p {
-      margin-bottom: 18px;
-    }
+        .foto-container img:first-child{
+            display:block;
+            max-width:100%;
+            height:auto;
+            border-radius:10px;
+        }
 
-    .frase-final {
-      font-style: italic;
-      font-size: 22px;
-      margin-top: 40px;
-      color: #444;
-      text-align: center;
-    }
+        .logo-intercom{
+            position:absolute;
+            right:18px;
+            bottom:18px;
+            width:110px;
 
-    footer {
-      margin-top: 30px;
-      font-size: 12px;
-      color: #aaa;
-    }
-  </style>
+            opacity:.9;
+
+            filter:
+                drop-shadow(0 0 8px rgba(255,215,0,.7))
+                drop-shadow(0 0 18px rgba(255,215,0,.45));
+
+            transition:.35s ease;
+        }
+
+        .logo-intercom:hover{
+            transform:scale(1.08);
+            opacity:1;
+        }
+
+        .descricao{
+            font-size:16px;
+            line-height:1.7;
+            text-align:justify;
+        }
+
+        .descricao p{
+            margin-bottom:18px;
+        }
+
+        .frase-final{
+            font-style:italic;
+            font-size:22px;
+            margin-top:40px;
+            color:#444;
+            text-align:center;
+        }
+
+        footer{
+            margin-top:30px;
+            font-size:12px;
+            color:#aaa;
+        }
+
+        @media(max-width:768px){
+
+            .container{
+                margin:20px;
+                padding:20px;
+            }
+
+            h1{
+                font-size:34px;
+            }
+
+            .logo-intercom{
+                width:75px;
+                right:12px;
+                bottom:12px;
+            }
+
+            .premio{
+                font-size:12px;
+            }
+
+            .frase-final{
+                font-size:19px;
+            }
+        }
+
+    </style>
 </head>
 
 <body>
 
-  <div class="container">
+<div class="container">
 
     <h1>FRONTEIRAS DE PAPEL</h1>
 
     <div class="autor">
-      por João Souza
-      <span class="premio">
-        🏆 1º Lugar — Intercom Sul 2026 • PT05 – Fotografia Artística
-      </span>
+        por João Victor de Souza
+        <span class="premio">
+            🏆 1º Lugar — Intercom Sul 2026 • PT05 – Fotografia Artística
+        </span>
     </div>
 
-    <img src="foto.jpg" alt="Fronteiras de Papel">
+    <div class="foto-container">
+
+        <img src="foto.jpg" alt="Fronteiras de Papel">
+
+        <img
+            src="logo.png"
+            alt="Intercom Sul 2026"
+            class="logo-intercom">
+
+    </div>
 
     <div class="descricao">
-      <p>
-        Um pedaço de algodão tensionado é a única estrutura que separa o voo da queda livre.
-        O chão avermelhado demarca onde o direito à cidade esbarra no tijolo cru;
-        no ar, ícones de papel tentam driblar o peso de quem nasce nas bordas do mapa.
-      </p>
 
-      <p>
-        Mesmo longe da Venezuela, o garoto reconhece o icônico personagem Chaves, popular em toda a América Latina,
-        e encontra em Londrina um fragmento de pertencimento. Sem perceber, há ironia no desenho infantil:
-        criado a partir de uma infância marcada pela escassez, ele ecoa, no ar, a própria causa que o fez deixar seu lar.
-      </p>
+        <p>
+            Um pedaço de algodão tensionado é a única estrutura que separa o voo da queda livre.
+            O chão avermelhado demarca onde o direito à cidade esbarra no tijolo cru;
+            no ar, ícones de papel tentam driblar o peso de quem nasce nas bordas do mapa.
+        </p>
 
-      <p>
-        A linha repuxa. Entre o lugar de origem e o território que o acolhe, o gesto de brincar redesenha limites invisíveis.
-        Onde o homem impõe o limite do passo, de quem é o vento que ousa cruzar a fronteira?
-      </p>
+        <p>
+            Mesmo longe da Venezuela, o garoto reconhece o icônico personagem Chaves,
+            popular em toda a América Latina, e encontra em Londrina um fragmento de
+            pertencimento. Sem perceber, há ironia no desenho infantil: criado a partir
+            de uma infância marcada pela escassez, ele ecoa, no ar, a própria causa que
+            o fez deixar seu lar.
+        </p>
+
+        <p>
+            A linha repuxa. Entre o lugar de origem e o território que o acolhe,
+            o gesto de brincar redesenha limites invisíveis. Onde o homem impõe
+            o limite do passo, de quem é o vento que ousa cruzar a fronteira?
+        </p>
+
     </div>
 
     <div class="frase-final">
-      "Se as fronteiras são cravadas na terra, qual é o limite do que consegue voar?"
+        "Se as fronteiras são cravadas na terra, qual é o limite do que consegue voar?"
     </div>
 
     <footer>
-      © 2026 — Todos os direitos reservados
+        © 2026 — Todos os direitos reservados
     </footer>
 
-  </div>
+</div>
 
 </body>
 </html>
-```
