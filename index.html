@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -44,12 +45,34 @@
 
     .premio {
       display: block;
-      margin-top: 8px;
-      font-size: 13px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: #8a6a18;
+      margin-top: 10px;
+      font-size: 14px;
       font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+
+      background: linear-gradient(
+        90deg,
+        #8a6a18 0%,
+        #d8b24a 20%,
+        #fff4b0 40%,
+        #d8b24a 60%,
+        #8a6a18 100%
+      );
+
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+
+      animation: shine 3s linear infinite;
+    }
+
+    @keyframes shine {
+      to {
+        background-position: 200% center;
+      }
     }
 
     img {
@@ -91,12 +114,12 @@
 
     <h1>FRONTEIRAS DE PAPEL</h1>
 
-<div class="autor">
-  por João Victor de Souza
-  <span class="premio">
-    🏆 1º Lugar — Intercom Sul 2026 • Produção Transdisciplinar • PT05 – Fotografia Artística
-  </span>
-</div>
+    <div class="autor">
+      por João Victor de Souza
+      <span class="premio">
+        🏆 1º Lugar — Intercom Sul 2026 • PT05 – Fotografia Artística
+      </span>
+    </div>
 
     <img src="foto.jpg" alt="Fronteiras de Papel">
 
@@ -131,3 +154,4 @@
 
 </body>
 </html>
+```
